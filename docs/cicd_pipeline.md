@@ -55,15 +55,16 @@ The CI workflow is triggered on every **Push to `main`** and **Pull Request targ
   - `tests/test_gold_exports.py`: Validates schema integrity, column names, and data types across Gold analytical CSVs.
 
 ### Gate 3: End-to-End Pipeline Execution (Integration Test)
-- **Service Container**: Spins up `ghcr.io/lake-data/minilake:latest` alongside the runner on port `8000`.
+- **Execution Mechanism**: `docker compose up --build --abort-on-container-exit --exit-code-from pipeline`
+- **Orchestration**: Runs MiniLake (`ghcr.io/dmux/minilake:latest`) and the Medallion pipeline container sharing bind-mounted `./data` and `./exports` volumes.
 - **Runtime Environment**:
   - OpenJDK 21 (for PySpark Delta Lake runtime)
   - Python 3.11
-- **Execution**: Runs `python scripts/run_all.py` against the live MiniLake service container.
+- **Execution**: Runs `python scripts/run_all.py` inside the container against MiniLake.
 - **Verification**: Asserts that all 4 scripts complete with returncode `0` and generates:
   - Bronze Delta logs in `data/delta/`
   - Silver & Gold tables in MiniLake
-  - Export CSVs in `data/exports/`
+  - Export CSVs in `exports/`
 
 ### Gate 4: Gold Export Schema Gate
 - Confirms that the following artifacts are produced and non-empty:
