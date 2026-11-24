@@ -1,0 +1,28 @@
+[project]
+name = "pharma-lakehouse-medallion"
+version = "1.0.0"
+description = "Pharmacy Sales & Inventory Risk Analysis - Local Medallion Lakehouse"
+authors = [{ name = "Data Engineering Team" }]
+readme = "README.md"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+exclude = [
+    "data/**",
+    ".git",
+    "__pycache__",
+    ".pytest_cache",
+    ".venv",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E501", "E402", "W293"]

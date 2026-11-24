@@ -1,0 +1,33 @@
+services:
+  minilake:
+    image: ghcr.io/dmux/minilake:latest
+    container_name: minilake
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/data
+      - ./exports:/data/exports
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8000/_minilake/health || exit 1"]
+      interval: 3s
+      timeout: 3s
+      retries: 10
+      start_period: 2s
+
+  pipeline:
+    build: .
+    container_name: pharma-pipeline
+    depends_on:
+      minilake:
+        condition: service_healthy
+    environment:
+      - MINILAKE_HOST=http://minilake:8000
+      - MINILAKE_TOKEN=dev
+      - DATA_DIR=/data
+      - EXPORTS_DIR=/data/exports
+      - CONTAINER_DATA_ROOT=/data
+    volumes:
+      - ./data:/data
+      - ./exports:/data/exports
+      - ./scripts:/workspace/scripts
+    command: ["python", "scripts/run_all.py"]

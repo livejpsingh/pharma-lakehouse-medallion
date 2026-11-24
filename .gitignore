@@ -1,0 +1,42 @@
+# Python / virtualenv
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Delta / Spark local temp
+.checkpoint/
+derby.log
+metastore_db/
+spark-warehouse/
+*.crc
+
+# Local generated data and MiniLake internal runtime databases
+data/delta/
+data/catalogs/
+data/warehouses/
+data/volumes/
+data/notebooks/
+*.duckdb*
+exports/*.csv
+!exports/.gitkeep
+
+# IDEs & OS files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db

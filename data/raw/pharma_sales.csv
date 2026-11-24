@@ -1,0 +1,21 @@
+drug_name,manufacturer,dosage_form,strength,package_size,units_sold,revenue,sale_date,region,sales_representative,customer_type
+Amoxicillin,Pfizer,Capsule,500mg,100 caps,45,675.00,2024-01-15,North,Sarah Jenkins,Hospital
+Lipitor,Pfizer,Tablet,20mg,30 tabs,120,3840.00,2024-01-15,East,Michael Chang,Retail Pharmacy
+Metformin,Novartis,Tablet,850mg,60 tabs,85,510.00,2024-01-16,South,Emma Watson,Clinic
+Omeprazole,AstraZeneca,Capsule,40mg,28 caps,60,1140.00,2024-01-16,West,David Rodriguez,Retail Pharmacy
+Azithromycin,Teva,Tablet,250mg,6 tabs,110,1320.00,2024-01-17,North,Sarah Jenkins,Hospital
+Atorvastatin,Novartis,Tablet,40mg,30 tabs,75,1875.00,2024-01-17,East,Michael Chang,Retail Pharmacy
+Losartan,Merck,Tablet,50mg,30 tabs,95,950.00,2024-01-18,South,Emma Watson,Clinic
+Albuterol,GlaxoSmithKline,Inhaler,90mcg,1 inhaler,40,2400.00,2024-01-18,West,David Rodriguez,Hospital
+Hydrochlorothiazide,Teva,Tablet,25mg,100 tabs,130,650.00,2024-01-19,North,Sarah Jenkins,Retail Pharmacy
+Gabapentin,Pfizer,Capsule,300mg,100 caps,55,1210.00,2024-01-19,East,Michael Chang,Hospital
+Lisinopril,AstraZeneca,Tablet,10mg,90 tabs,105,735.00,2024-01-20,South,Emma Watson,Retail Pharmacy
+Sertraline,Pfizer,Tablet,50mg,30 tabs,65,1625.00,2024-01-20,West,David Rodriguez,Clinic
+Amoxicillin,Pfizer,Capsule,500mg,100 caps,-5,-75.00,2024-01-21,North,Sarah Jenkins,Hospital
+Metformin,Novartis,Tablet,850mg,60 tabs,,0.00,2024-01-21,South,Emma Watson,Clinic
+Lipitor,Pfizer,Tablet,20mg,30 tabs,140,4480.00,2024-01-22,East,Michael Chang,Retail Pharmacy
+Omeprazole,AstraZeneca,Capsule,40mg,28 caps,80,1520.00,2024-01-22,West,David Rodriguez,Retail Pharmacy
+Azithromycin,Teva,Tablet,250mg,6 tabs,90,1080.00,2024-01-23,North,Sarah Jenkins,Clinic
+Atorvastatin,Novartis,Tablet,40mg,30 tabs,115,2875.00,2024-01-23,East,Michael Chang,Hospital
+Losartan,Merck,Tablet,50mg,30 tabs,80,800.00,2024-01-24,South,Emma Watson,Retail Pharmacy
+Albuterol,GlaxoSmithKline,Inhaler,90mcg,1 inhaler,60,3600.00,2024-01-24,West,David Rodriguez,Hospital
