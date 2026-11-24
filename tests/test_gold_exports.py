@@ -17,18 +17,17 @@ def test_exported_csv_schemas():
     drug_perf_path = config.EXPORTS_DIR / "drug_performance.csv"
     rep_perf_path = config.EXPORTS_DIR / "rep_performance.csv"
 
-    # Only validate contents if pipeline has been run
-    if daily_sales_path.exists():
-        with open(daily_sales_path, mode="r", encoding="utf-8") as f:
-            headers = next(csv.reader(f))
-            assert headers == ["sale_date", "region", "total_revenue", "total_units", "transaction_count"]
+    assert daily_sales_path.exists(), f"Missing export: {daily_sales_path}"
+    with open(daily_sales_path, mode="r", encoding="utf-8") as f:
+        headers = next(csv.reader(f))
+        assert headers == ["sale_date", "region", "total_revenue", "total_units", "transaction_count"]
 
-    if drug_perf_path.exists():
-        with open(drug_perf_path, mode="r", encoding="utf-8") as f:
-            headers = next(csv.reader(f))
-            assert headers == ["drug_name", "dosage_form", "total_revenue", "total_units", "revenue_rank"]
+    assert drug_perf_path.exists(), f"Missing export: {drug_perf_path}"
+    with open(drug_perf_path, mode="r", encoding="utf-8") as f:
+        headers = next(csv.reader(f))
+        assert headers == ["drug_name", "dosage_form", "total_revenue", "total_units", "revenue_rank"]
 
-    if rep_perf_path.exists():
-        with open(rep_perf_path, mode="r", encoding="utf-8") as f:
-            headers = next(csv.reader(f))
-            assert headers == ["sales_representative", "order_count", "total_revenue", "avg_order_value", "total_units"]
+    assert rep_perf_path.exists(), f"Missing export: {rep_perf_path}"
+    with open(rep_perf_path, mode="r", encoding="utf-8") as f:
+        headers = next(csv.reader(f))
+        assert headers == ["sales_representative", "order_count", "total_revenue", "avg_order_value", "total_units"]
